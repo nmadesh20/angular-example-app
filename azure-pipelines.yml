@@ -12,7 +12,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '12.x'
+    versionSpec: '17.x'
   displayName: 'Install Node.js'
 
 - script: |
@@ -23,7 +23,7 @@ steps:
 
 - script: |
   displayName: Running Tests
-    npx ng test --browsers ChromeHeadlessNoSandbox --watch=false --code-coverage
+    npx ng test --code-coverage=true
 
 - task: CmdLine@2
   inputs:
